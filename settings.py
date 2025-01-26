@@ -9,5 +9,5 @@ class Settings:
         self.screen_height = self.screen.get_rect().height
 
         #Pipe Settings
-        self.gap_size = 100
+        self.gap_size = 150
         self.pipe_moving_speed = 1.0

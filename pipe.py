@@ -13,7 +13,6 @@ class Pipe(Sprite):
         self.screen_width = ai_game.settings.screen_width
         self.screen_height = ai_game.settings.screen_height
         
-
         #Get settings from main class
         self.settings = ai_game.settings
 
@@ -31,8 +30,8 @@ class Pipe(Sprite):
         self.pipe_bottom_height = self.screen_height
         self.image_bottom = py.transform.scale(self.image_bottom, (self.pipe_bottom_width, self.pipe_bottom_height))
 
+        self.rect = self.image_bottom.get_rect()
         #create randomn height for pipes
-        self.pipe_max_y_pos = round(self.screen_height/2)
         self._create_height()
 
     def _create_height(self):
