@@ -143,18 +143,18 @@ class Flappy_Bird:
         self.pipes.update()
 
     def _check_difficult(self):
-        if self.stats.score > 10:
-            self.settings.pipe_moving_speed *= 1.5
-        elif self.stats.score > 20:
-            self.settings.pipe_moving_speed *= 2
-        elif self.stats.score > 30:
-            self.settings.pipe_moving_speed *= 2.5
-        elif self.stats.score > 40:
-            self.settings.pipe_moving_speed *= 3
+        if self.stats.score > 100:
+            self.settings.pipe_moving_speed *= 4
         elif self.stats.score > 50:
             self.settings.pipe_moving_speed *= 3.5
-        elif self.stats.score > 100:
-            self.settings.pipe_moving_speed *= 4
+        elif self.stats.score > 50:
+            self.settings.pipe_moving_speed *= 3
+        elif self.stats.score > 30:
+            self.settings.pipe_moving_speed *= 2.5
+        elif self.stats.score > 20:
+            self.settings.pipe_moving_speed *= 2
+        elif self.stats.score > 10:
+            self.settings.pipe_moving_speed *= 1.5
 
     def _update_screen(self):
         """Updates the Screen of game"""
