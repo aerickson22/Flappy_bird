@@ -14,14 +14,14 @@ class Scoreboard:
 
         #Font settings for scoring information
         self.text_color = (0, 0, 0)
-        self.font = pygame.font.SysFont(None, 48)
+        self.font = pygame.font.SysFont(None, 100)
 
         #Prepare the inital score image
         self.prep_score()
 
     def prep_score(self):
         """Turn the score into a rendered image"""
-        rounded_score = round(self.stats.score, -1)
+        rounded_score = round(self.stats.score)
         score_str = f"{rounded_score}"
         self.score_image = self.font.render(score_str, True, self.text_color, self.settings.bg_color)
 

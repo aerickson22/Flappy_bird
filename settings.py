@@ -7,6 +7,7 @@ class Settings:
         self.screen = ai_game.screen
         self.screen_width = self.screen.get_rect().width
         self.screen_height = self.screen.get_rect().height
+        self.bg_color = (6, 255, 239)
 
         #Pipe Settings
         self.gap_size = 150

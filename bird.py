@@ -17,7 +17,9 @@ class Bird:
         self.image = py.image.load("images/bluebird-midflap.bmp")
         self.rect = self.image.get_rect()
 
-        self.rect.midleft = self.screen.get_rect().midleft
+        self.x = self.rect.x
+
+        self.rect.midleft = self.screen.get_rect().midleft  # Start at the left edge of the screen
         self.y = float(self.rect.y)
 
         #Bird Physiscs
@@ -29,12 +31,17 @@ class Bird:
         self.vel += 0.5
         if self.vel > 8:
             self.vel = 8
-        if self.rect.bottom < 0:
+        if self.rect.bottom < self.screen_height:
             self.rect.y += (self.vel)
 
     def jump_bird(self):
         """makes bird jump"""
-        self.vel = -9
-
+        self.vel = -8
+        
     def draw_bird(self):
+        """Draw birds to screen"""
         self.screen.blit(self.image, self.rect)
+
+    def center_bird(self):
+        """Center the bird"""
+        self.rect.midleft = self.screen.get_rect().midleft

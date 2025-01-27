@@ -18,19 +18,19 @@ class Pipe(Sprite):
 
         #Get Top Pipe settings
         self.image_top = py.image.load("images/pipe-green-flip.bmp")
-        self.pipe_top_rect = self.image_top.get_rect()
-        self.pipe_top_width = self.pipe_top_rect.width
+        self.pipe_top_width = self.image_top.get_rect().width
         self.pipe_top_height = self.screen_height
         self.image_top = py.transform.scale(self.image_top, (self.pipe_top_width, self.pipe_top_height))
+        self.pipe_top_rect = self.image_top.get_rect()
+
 
         #Get Bottom Pipe settings
         self.image_bottom = py.image.load("images/pipe-green.bmp")
-        self.pipe_bottom_rect = self.image_bottom.get_rect()
-        self.pipe_bottom_width = self.pipe_bottom_rect.width
+        self.pipe_bottom_width = self.image_bottom.get_rect().width
         self.pipe_bottom_height = self.screen_height
         self.image_bottom = py.transform.scale(self.image_bottom, (self.pipe_bottom_width, self.pipe_bottom_height))
+        self.pipe_bottom_rect = self.image_bottom.get_rect()
 
-        self.rect = self.image_bottom.get_rect()
         #create randomn height for pipes
         self._create_height()
 
@@ -39,7 +39,7 @@ class Pipe(Sprite):
         gap_y = randint(100, self.screen_height - self.settings.gap_size - 100)
 
         self.pipe_bottom_rect.y = gap_y + self.settings.gap_size 
-        self.pipe_top_rect.y = gap_y - self.pipe_top_height
+        self.pipe_top_rect.y = gap_y - self.pipe_top_height  
         
     def draw_pipe_set(self):
         """Draws pipe set to the screen"""
@@ -51,5 +51,6 @@ class Pipe(Sprite):
         self.x -= self.settings.pipe_moving_speed
         self.pipe_top_rect.x = self.x
         self.pipe_bottom_rect.x = self.x
+
 
 
